@@ -25,7 +25,7 @@ Data Type: Quantitative, temporal
 #2:
 import pandas as pd
 import matplotlib.pyplot as plt
-file_path = "C:/Users/l.perrey.INTERN/Desktop/Übungen/Data Visualization/Übung 1/1669_BK.xlsx"
+file_path = "C:/path/to/file
 df = pd.read_excel(file_path)
 df = df.rename(columns=lambda x: x.replace(',', '') if isinstance(x, str) else x)
 print(df.head())
@@ -70,7 +70,21 @@ Target: Attributes (many) -> Correlation
 We wanted to analyze the dataset, to see if theres a correlation between benefits with respect to unemployment.
 '''
 #7
+correlation_demand_unemployment = df['DEMAND'].corr(df['UNEMP'])
+print(f"Correlation between DEMAND and Total Unemployment: {correlation_demand_unemployment}")
+sns.scatterplot(x='DEMAND', y='UNEMP', data=df)
+plt.xlabel('DEMAND')
+plt.ylabel('Total Unemployment')
+plt.title('Scatter Plot: DEMAND vs. Total Unemployment')
+plt.show()
+'''
+Negative Correlation between demand and total unemployment: the change in demand is the target variable influencing the change in unemployment. Specifically, a decrease in demand is associated with an increase in unemployment.
+'''
 #8
+'''
+There is an existing correlation between the number of the amount of benefits with respect to the unemployment rate.
+However: Due to differences between young and old age, the ratio of female and male workforce and the great depression following the War, the use correlation coefficient as a standalone measurement may not be suitable.
+'''
 #9
 df_no_1920 = df[df['YEAR'] != 1920]
 
@@ -87,3 +101,7 @@ plt.title('Correlation Between Benefits and Unemployment')
 plt.show()
 correlation_coefficient = df_no_1920['BWRATIO'].corr(df_no_1920['UNEMP'])
 print(f'Correlation Coefficient: {correlation_coefficient}')
+
+'''
+The deviation in 1920 may be explained due to missing data. 
+'''
