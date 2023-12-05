@@ -1,3 +1,16 @@
+'''
+Left Plot:
+Gestalt Laws: Proximity; Similarity
+Effects: We can only perceive, that the plot contains two different datasets, that are being visualized, highlighted by dotted and cubed datapoints.
+There is an orientation to the left side of the coordinate system.
+
+Right Plot:
+Gestalt Laws: Similarity; Enclosure; Connection
+Effects: In this plot, the datasets are now conneced. This contributes to the fact, that we are now able to see
+peaks and minima. We can also assume, that the plot is depicting a timframe. The enclosure from the dotted circle also highlights the local maxima
+in both graphs and we are able to compare the datapoints.
+'''
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt

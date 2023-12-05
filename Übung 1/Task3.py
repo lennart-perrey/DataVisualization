@@ -25,7 +25,7 @@ Data Type: Quantitative, temporal
 #2:
 import pandas as pd
 import matplotlib.pyplot as plt
-file_path = "C:/path/to/file
+file_path = "C:/path/to/file"
 df = pd.read_excel(file_path)
 df = df.rename(columns=lambda x: x.replace(',', '') if isinstance(x, str) else x)
 print(df.head())

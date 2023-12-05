@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 #1
-file_path = "C:/Users/l.perrey.INTERN/Desktop/Übungen/Data Visualization/Übung 1/DatasaurusDozen.tsv"
+file_path = "C:/path/to/file"
 file = pd.read_csv(file_path, sep='\t')
 
 #2
