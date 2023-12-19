@@ -20,45 +20,34 @@ grouped bar chart is more effective for comparing proportions between major cate
 '''
 import matplotlib.pyplot as plt
 
-# Data for the original pie chart
 categories = ['Apps', 'Browser']
-colors = ['#3498db', '#2ecc71']  # Blue for Apps, Green for Browser
-sizes = [86, 14]  # Percentage of time spent
-
-# Subcategories for Apps and Browser
+colors = ['#3498db', '#2ecc71'] 
+sizes = [86, 14] 
 app_subcategories = ['Gaming', 'Facebook', 'Utilities', 'Productivity', 'Social Messaging', 'Others', 'Entertainment', 'Youtube', 'News', 'Twitter']
 app_sub_sizes = [32, 17, 8, 4, 9.5, 3, 4, 4, 3, 1]
-app_colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#17becf', '#ff0000']  # Different colors for app subcategories
-
+app_colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#17becf', '#ff0000'] 
 browser_subcategories = ['Apple Safari', 'Google Browsers', 'Others']
 browser_sub_sizes = [7, 5, 2]
-browser_colors = ['#1f77b4', '#ff7f0e', '#2ca02c']  # Different colors for browser subcategories
+browser_colors = ['#1f77b4', '#ff7f0e', '#2ca02c']
 
-# Create a stacked bar chart
+
 fig, ax = plt.subplots()
-
-# Plotting the Apps category
 ax.bar(categories[0], sizes[0], color=colors[0], label='Total', alpha=0.7)
 
-# Plotting the subcategories for Apps
 bottom = [0]
 for i, (subcat, subsize, color) in enumerate(zip(app_subcategories, app_sub_sizes, app_colors)):
     ax.bar(categories[0], subsize, color=color, bottom=bottom[-1], label=subcat, alpha=0.7)
     bottom.append(bottom[-1] + subsize)
 
-# Plotting the Browser category
 ax.bar(categories[1], sizes[1], color=colors[1], label='Total', alpha=0.7)
 
-# Plotting the subcategories for Browser
 bottom = [0]
 for i, (subcat, subsize, color) in enumerate(zip(browser_subcategories, browser_sub_sizes, browser_colors)):
     ax.bar(categories[1], subsize, color=color, bottom=bottom[-1], label=subcat, alpha=0.7)
     bottom.append(bottom[-1] + subsize)
 
-# Adding labels and legend
 ax.set_ylabel('% of Time Spent')
 ax.set_title('Mobile Experience: Apps vs. Browser')
 ax.legend()
 
-# Display the plot
 plt.show()
